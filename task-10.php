@@ -1,27 +1,27 @@
 <?php
-function sendHuman ($ship) 
+function sendHuman($ship)
 {
-   $message =[];
+   $message = [];
    $people = [
-    "торговец", 
-    "атакующий", 
-    "представитель"
+      "торговец",
+      "атакующий",
+      "представитель"
    ];
-   
-   if($ship == "Пират"){
+
+   if ($ship == "Пират") {
       array_push($message, $people[1]);
    }
-   if($ship == "Патруль"){
+   if ($ship == "Патруль") {
       array_push($message, $people[2]);
    }
-   
-   if($ship == "Торговое судно") { 
-      array_push($message, $people[0]);
-   } 
 
-        return $message
-     ? implode(',\n', $message)
-     :'No validation messages';
+   if ($ship == "Торговое судно") {
+      array_push($message, $people[0]);
+   }
+
+   return $message
+      ? implode(',\n', $message)
+      : 'No validation messages';
 }
 
 echo sendHuman("Пират");
